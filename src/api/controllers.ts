@@ -1,4 +1,4 @@
-import { IFood, ENDPOINTS, IConversion, IRecipe } from '../utils';
+import { ENDPOINTS, IConversion, IRecipe } from '../utils';
 import { apiRequest } from '../config';
 import { ENV } from '../config/env';
 

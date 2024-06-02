@@ -12,7 +12,6 @@ const PopularRecipes = () => {
 	});
 
 	if (recipes && Object.keys(recipes).length > 0) {
-		const randomNumber = Math.ceil(Math.random() * 10);
 		return (
 			<div className='sticky top-[110px] hidden md:block'>
 				<h3 className='text-[18px] mb-4'>Popular Recipes</h3>
