@@ -1,6 +1,6 @@
 # FoodApp Assessment
 
-[hosted link on Vercel](food-app-test-nu.vercel.app)
+[hosted link on Vercel](https://food-app-test-nu.vercel.app/)
 
 This projects is setup using Vite-React with Typescript, styled with Tailwind CSS.
 APIs request was handle using [TanStack React Query](https://tanstack.com/query/latest/docs/framework/react/overview) with axios.
