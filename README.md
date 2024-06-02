@@ -7,5 +7,6 @@ APIs request was handle using [TanStack React Query](https://tanstack.com/query/
 
 Api services used:
 
-- [Tasty Rapid Api](https://tasty.p.rapidapi.com) - Recipe
-- [Tripadvisor16 Rapid Api](https://tripadvisor16.p.rapidapi.com/api) - Restaurants
+- [Tasty Rapid Api](https://tasty.p.rapidapi.com) - Recipe.
+- [Tripadvisor16 Rapid Api](https://tripadvisor16.p.rapidapi.com/api) - Restaurants.
+- [Fast Forex](https://api.fastforex.io) - Currency exchange rate.
