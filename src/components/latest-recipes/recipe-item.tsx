@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { IFood, IRecipe, LINKS } from '../../utils';
+import { IRecipe, LINKS } from '../../utils';
 // top-[-50%] left-[50%] translate-x-[-50%] translate-y-[-50%]
 
 interface IRecipeItem {
