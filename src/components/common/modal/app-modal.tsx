@@ -1,9 +1,4 @@
-import React, {
-	useImperativeHandle,
-	forwardRef,
-	useState,
-	ReactNode,
-} from 'react';
+import { useImperativeHandle, forwardRef, useState, ReactNode } from 'react';
 import { XCircle } from 'lucide-react';
 
 export interface IModalRef {

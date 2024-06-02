@@ -1,4 +1,3 @@
-import React from 'react';
 import { AppContainer, RecipeItem, Spinner } from '../../components';
 import { QUERY_KEYS } from '../../utils';
 import { useFoodsServices } from '../../api';

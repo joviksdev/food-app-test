@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PopularRecipeItem from './popular-recipe-item';
 import { CATEGORIES, LINKS } from '../../utils';

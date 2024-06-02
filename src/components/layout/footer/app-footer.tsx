@@ -1,4 +1,3 @@
-import React from 'react';
 import { AppContainer } from '../../common';
 
 const AppFooter = () => {

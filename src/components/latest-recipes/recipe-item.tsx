@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { IFood, LINKS } from '../../utils';
 // top-[-50%] left-[50%] translate-x-[-50%] translate-y-[-50%]

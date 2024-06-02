@@ -1,4 +1,3 @@
-import React from 'react';
 import { Utensils } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { LINKS } from '../../../utils';

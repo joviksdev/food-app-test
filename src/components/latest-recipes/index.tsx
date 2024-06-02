@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import RecipeItem from './recipe-item';
 import { useFoodsServices } from '../../api';

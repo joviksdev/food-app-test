@@ -27,26 +27,12 @@ const AppSidebar: React.FC<IAppSidebar> = ({ isDisplay, closeSidebar }) => {
 				<AppIcon />
 				<ul className='mt-5'>
 					<li className='mb-4'>
-						<NavLink
-							onClick={closeSidebar}
-							className={({ isActive }) =>
-								`'
-								}`
-							}
-							to={LINKS.Recipes}
-						>
+						<NavLink onClick={closeSidebar} to={LINKS.Recipes}>
 							Recipes
 						</NavLink>
 					</li>
 					<li>
-						<NavLink
-							onClick={closeSidebar}
-							className={({ isActive }) =>
-								`'
-								}`
-							}
-							to={LINKS.Resturants}
-						>
+						<NavLink onClick={closeSidebar} to={LINKS.Resturants}>
 							Resturants
 						</NavLink>
 					</li>

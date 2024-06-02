@@ -1,8 +1,6 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { AppContainer, RecipeItem, Spinner } from '../../components';
-import { QUERY_KEYS } from '../../utils';
-import { useFoodsServices, useSimilarFoodsServices } from '../../api';
+import { useSimilarFoodsServices } from '../../api';
 
 const PopularRecipes = () => {
 	const params = useParams();

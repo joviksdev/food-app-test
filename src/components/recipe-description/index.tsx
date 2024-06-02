@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { AppModal, IModalRef } from '../common';
 import { IConversion, INutritionalInformation } from '../../utils';
 import { useGetForexPrice } from '../../api';
@@ -11,7 +11,7 @@ const RecipeDescription = ({
 	price: number;
 }) => {
 	const modalRef = useRef<IModalRef | null>(null);
-	const { isLoadingConvert, convert } = useGetForexPrice();
+	const { convert } = useGetForexPrice();
 	const [dollarPrice, setDollarPrice] = useState<number>(0);
 
 	const handleDisplayPrice = () => {

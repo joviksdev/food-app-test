@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSimilarFoodsServices } from '../../api';
 import SimilarFoodItem from './similar-food-item';
 import { IFood } from '../../utils';
