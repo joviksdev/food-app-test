@@ -10,7 +10,7 @@ interface IAppHeader {
 
 const AppHeader: React.FC<IAppHeader> = ({ toggleMenu }) => {
 	return (
-		<header className='fixed border-b w-full h-[80px] z-10 bg-white flex'>
+		<header className='app-header fixed border-b w-full h-[80px] z-10 bg-white flex'>
 			<div className='flex items-center justify-between w-full max-w-[1200px] mx-auto px-[15px] py-2'>
 				<AppIcon />
 				<button onClick={toggleMenu} className='md:hidden'>

@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
 import { AppModal, IModalRef } from '../common';
-import { IConversion, INutritionalInformation } from '../../utils';
+import { IConversion } from '../../utils';
 import { useGetForexPrice } from '../../api';
 
 const RecipeDescription = ({
 	description,
 	price = 0,
 }: {
-	description: INutritionalInformation;
+	description: { [key: string]: any };
 	price: number;
 }) => {
 	const modalRef = useRef<IModalRef | null>(null);
@@ -38,11 +38,14 @@ const RecipeDescription = ({
 				</div>
 				<div className='grid gap-4 px-4 my-4'>
 					{description &&
-						Object.keys(description).map((item) => (
-							<p className='capitalize' key={item}>
-								{item}: {(description as any)[item]}g
-							</p>
-						))}
+						Object.keys(description).map((item) => {
+							if (item === 'updated_at') return null;
+							return (
+								<p className='capitalize' key={item}>
+									{item}: {(description as any)[item]}g
+								</p>
+							);
+						})}
 				</div>
 				<div className='flex gap-4 items-center pt-3 px-4'>
 					<p>

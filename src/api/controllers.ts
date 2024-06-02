@@ -1,4 +1,4 @@
-import { IFood, ENDPOINTS, IConversion } from '../utils';
+import { IFood, ENDPOINTS, IConversion, IRecipe } from '../utils';
 import { apiRequest } from '../config';
 import { ENV } from '../config/env';
 
@@ -11,18 +11,31 @@ export const foodsController = async (params?: {
 		params,
 	});
 
-export const foodController = async (slug: string): Promise<IFood> =>
+export const recipesController = async (params?: {
+	[key: string]: any;
+}): Promise<{ results: IRecipe[]; count: number }> =>
 	apiRequest({
-		url: `${ENDPOINTS.Foods}/${slug}`,
+		url: `${ENDPOINTS.Recipes}/list`,
 		method: 'GET',
+		params,
 	});
 
-export const similarFoodsController = async (
-	category: string
-): Promise<IFood[]> =>
+export const recipeController = async (params?: {
+	[key: string]: any;
+}): Promise<IRecipe> =>
 	apiRequest({
-		url: `${ENDPOINTS.FoodCategory}/${category}`,
+		url: `${ENDPOINTS.Recipes}/get-more-info`,
 		method: 'GET',
+		params,
+	});
+
+export const similarRecipesController = async (params?: {
+	[key: string]: any;
+}): Promise<{ results: IRecipe[] }> =>
+	apiRequest({
+		url: `${ENDPOINTS.Recipes}/list-similarities`,
+		method: 'GET',
+		params,
 	});
 
 export const dollarToNgn = async (params: any): Promise<IConversion> =>

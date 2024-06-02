@@ -18,11 +18,11 @@ const rootRouter = createBrowserRouter([
 				element: <AllRecipe />,
 			},
 			{
-				path: '/recipes/:slug',
+				path: '/recipes/:id',
 				element: <Recipe />,
 			},
 			{
-				path: '/popular-recipes/:slug',
+				path: '/popular-recipes/:id',
 				element: <PopularRecipes />,
 			},
 			{

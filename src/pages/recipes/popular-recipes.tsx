@@ -1,25 +1,24 @@
 import { useParams } from 'react-router-dom';
 import { AppContainer, RecipeItem, Spinner } from '../../components';
-import { useSimilarFoodsServices } from '../../api';
+import { useSimilarRecipeServices } from '../../api';
 
 const PopularRecipes = () => {
 	const params = useParams();
 
-	const slug = params?.slug;
+	const id = params?.id as string;
 
-	const { dataSimilarFoods, isLoadingSimilarFoods } = useSimilarFoodsServices(
-		slug as string
-	);
+	const { similarRecipes, isLoadingSimilarRecipes } = useSimilarRecipeServices({
+		params: { id },
+		key: 'SimilarRecipes-all',
+	});
 
-	const data = dataSimilarFoods && Object.values(dataSimilarFoods)[0];
+	const data = similarRecipes && Object.values(similarRecipes)[0];
 
 	return (
 		<AppContainer className='pt-4 pb-10'>
-			<h1 className='font-semibold text-2xl mb-4 capitalize'>
-				{slug?.toString()?.replace(/_/g, ' ')}
-			</h1>
+			<h1 className='font-semibold text-2xl mb-4 capitalize'>Similar Recipe</h1>
 
-			{isLoadingSimilarFoods ? (
+			{isLoadingSimilarRecipes ? (
 				<Spinner />
 			) : (
 				data &&

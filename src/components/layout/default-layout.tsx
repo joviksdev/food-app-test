@@ -16,7 +16,7 @@ const DefaultLayout = () => {
 				closeSidebar={() => setDisplayMenu(false)}
 			/>
 			<AppHeader toggleMenu={handleToggleMenu} />
-			<div className='pt-[80px] flex-1'>
+			<div className='outlet pt-[80px] flex-1'>
 				<Outlet />
 			</div>
 			<AppFooter />

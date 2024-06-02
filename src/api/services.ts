@@ -1,47 +1,72 @@
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEYS } from '../utils';
 import {
-	foodsController,
-	foodController,
-	similarFoodsController,
 	dollarToNgn,
+	recipesController,
+	recipeController,
+	similarRecipesController,
 } from './controllers';
 
-export const useFoodsServices = (key: string = QUERY_KEYS.Foods) => {
-	const { data, isLoading } = useQuery({
+export const useRecipesServices = ({
+	params,
+	key,
+}: {
+	params?: { [key: string]: any };
+	key: string;
+}) => {
+	const { data, isLoading, refetch } = useQuery({
 		queryKey: [key],
-		queryFn: () => foodsController(),
+		queryFn: () => recipesController(params),
 	});
 
+	const recipes = data && data?.results;
+	const total = data && data.count;
+
 	return {
-		isLoadingFood: isLoading,
-		foods: data,
+		isLoadingRecipes: isLoading,
+		recipes,
+		totalCount: total,
+		refetchRecipes: refetch,
 	};
 };
 
-export const useFoodServices = (slug: string) => {
+export const useRecipeServices = ({
+	params,
+	key,
+}: {
+	params?: { [key: string]: any };
+	key: string;
+}) => {
 	const { data, isLoading } = useQuery({
-		queryKey: [QUERY_KEYS.Food, slug],
-		queryFn: () => foodController(slug),
-		enabled: !!slug,
+		queryKey: [QUERY_KEYS.Recipe, key],
+		queryFn: () => recipeController(params),
 	});
 
+	const recipe = data;
+
 	return {
-		isLoadingFood: isLoading,
-		dataFood: data,
+		isLoadingRecipe: isLoading,
+		recipe,
 	};
 };
 
-export const useSimilarFoodsServices = (category: string) => {
+export const useSimilarRecipeServices = ({
+	params,
+	key,
+}: {
+	params?: { [key: string]: any };
+	key: string;
+}) => {
 	const { data, isLoading } = useQuery({
-		queryKey: [category],
-		queryFn: () => similarFoodsController(category),
-		enabled: !!category,
+		queryKey: [QUERY_KEYS.SimilarRecipes, key],
+		queryFn: () => similarRecipesController(params),
 	});
 
+	const recipes = data && data?.results;
+
 	return {
-		isLoadingSimilarFoods: isLoading,
-		dataSimilarFoods: data,
+		isLoadingSimilarRecipes: isLoading,
+		similarRecipes: recipes,
 	};
 };
 

@@ -7,7 +7,7 @@ const HomeHero = () => {
 		<div>
 			<div
 				style={{
-					backgroundImage: `url(/images/meat-pie.jpg)`,
+					backgroundImage: `url(/images/hero.jpg)`,
 				}}
 				className='group h-[380px] md:h-[540px] [&>img]:w-full bg-cover bg-center relative overflow-hidden before:content-[""] before:absolute before:top-0 before:left-0 before:bg-black/20 before:w-full before:bottom-0 transition-all duration-1000 group-hover/container:scale-105 before:z-0 px-4 py-3 '
 			>
@@ -28,7 +28,7 @@ const HomeHero = () => {
 						className={
 							'border border-white px-4 py-2 md:p-4 text-white rounded-md hover:bg-white hover:text-primary transition-all'
 						}
-						to={'/recipes/meat_pie'}
+						to={'/recipes/7919'}
 					>
 						View Recipe
 					</NavLink>

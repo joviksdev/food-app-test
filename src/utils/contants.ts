@@ -7,14 +7,16 @@ export const LINKS = {
 
 export const ENDPOINTS = {
 	Foods: '/foods',
+	Recipes: '/recipes',
 	FoodCategory: '/food_category',
 };
 
 export const QUERY_KEYS = {
-	Foods: '@QueryKey:Foods',
-	Food: '@QueryKey:Food',
 	ForexConvert: '@QueryKey:ForexConvert',
 	LatestFoods: '@QueryKey:LatestFoods',
+	Recipes: '@QueryKey:Recipes',
+	SimilarRecipes: '@QueryKey:SimilarRecipes',
+	Recipe: '@QueryKey:Recipe',
 };
 
 export const CATEGORIES = [

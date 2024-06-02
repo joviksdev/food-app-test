@@ -1,36 +1,36 @@
-import { useSimilarFoodsServices } from '../../api';
+import { useSimilarRecipeServices } from '../../api';
 import SimilarFoodItem from './similar-food-item';
-import { IFood } from '../../utils';
+import { IRecipe } from '../../utils';
 
 interface ISimilarFoods {
-	category: string;
-	selectedFood: string;
+	recipe: string;
 }
 
-const SimilarFoods = ({ category, selectedFood }: ISimilarFoods) => {
-	const { isLoadingSimilarFoods, dataSimilarFoods } =
-		useSimilarFoodsServices(category);
-
-	const categoryList = dataSimilarFoods && Object.values(dataSimilarFoods);
+const SimilarFoods = ({ recipe }: ISimilarFoods) => {
+	const { isLoadingSimilarRecipes, similarRecipes } = useSimilarRecipeServices({
+		key: recipe,
+		params: {
+			size: 3,
+			recipe_id: recipe,
+		},
+	});
 
 	return (
 		<div>
 			<h2 className='mb-4 font-semibold'>Similar Foods</h2>
-			{isLoadingSimilarFoods ? (
+			{isLoadingSimilarRecipes ? (
 				<p>Loading Similar Food...</p>
 			) : (
-				categoryList && (
+				similarRecipes &&
+				Array.isArray(similarRecipes) &&
+				similarRecipes.length > 0 && (
 					<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4'>
-						{[...(categoryList[0] as any)]
-							.splice(0, 5)
-							.filter((value) => Object.keys(value)[0] !== selectedFood)
-							.map((value: IFood, key) => {
-								const food = Object.values(value)[0];
+						{[...similarRecipes]
+							.splice(0, 4)
+							.filter((value) => Object.keys(value)[0] !== recipe)
+							.map((value: IRecipe, key) => {
 								return (
-									<SimilarFoodItem
-										key={`${food?.category}-${key}`}
-										food={value}
-									/>
+									<SimilarFoodItem key={`${value?.id}-${key}`} recipe={value} />
 								);
 							})}
 					</div>

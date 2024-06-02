@@ -15,6 +15,8 @@ export const apiRequest = async (config?: ConfigTypes) => {
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
+			'X-RapidAPI-Key': 'd4047c84demshd0d92035d828c3ep16d080jsn30960372e188',
+			'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
 		},
 		data: config?.data,
 		params: config?.params,
