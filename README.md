@@ -1,9 +1,11 @@
-# FoodApp Aassessment
+# FoodApp Assessment
 
 [hosted link on Vercel](food-app-test-nu.vercel.app)
 
-This template provides a minimal setup to get React with typescript working in Vite styled with Tailwind css.
+This projects is setup using Vite-React with Typescript, styled with Tailwind CSS.
+APIs request was handle using [TanStack React Query](https://tanstack.com/query/latest/docs/framework/react/overview) with axios.
 
 Api services used:
 
-- [Nigerian-Foods-Api](https://github.com/Thompsonmina/Nigerian-Foods-Api?tab=readme-ov-file)
+- [Tasty Rapid Api](https://tasty.p.rapidapi.com) - Recipe
+- [Tripadvisor16 Rapid Api](https://tripadvisor16.p.rapidapi.com/api) - Restaurants

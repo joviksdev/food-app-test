@@ -8,3 +8,4 @@ export { default as SimilarFoods } from './similar-foods';
 export { default as Spinner } from './common/spinner';
 export * from './hero';
 export { default as Pagination } from './pagination';
+export { default as Restaurant } from './restaurant';

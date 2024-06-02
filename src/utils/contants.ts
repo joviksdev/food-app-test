@@ -9,6 +9,7 @@ export const ENDPOINTS = {
 	Foods: '/foods',
 	Recipes: '/recipes',
 	FoodCategory: '/food_category',
+	Restaurant: '/restaurant',
 };
 
 export const QUERY_KEYS = {
@@ -17,6 +18,7 @@ export const QUERY_KEYS = {
 	Recipes: '@QueryKey:Recipes',
 	SimilarRecipes: '@QueryKey:SimilarRecipes',
 	Recipe: '@QueryKey:Recipe',
+	Restaurants: '@QueryKey:Restaurants',
 };
 
 export const CATEGORIES = [

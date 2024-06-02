@@ -1,27 +1,31 @@
-import { useNavigate } from 'react-router-dom';
 import PopularRecipeItem from './popular-recipe-item';
-import { CATEGORIES, LINKS } from '../../utils';
+import { QUERY_KEYS } from '../../utils';
+import { useRecipesServices } from '../../api';
 
 const PopularRecipes = () => {
-	const navigate = useNavigate();
-	const onClick = (slug: string) => {
-		navigate(`${LINKS.PopularRecipes}/${slug}`);
-	};
+	const { recipes } = useRecipesServices({
+		key: `${QUERY_KEYS.Recipes}-popular`,
+		params: {
+			from: 0,
+			size: '20',
+		},
+	});
 
-	return (
-		<div className='sticky top-[110px] hidden md:block'>
-			<h3 className='text-[18px] mb-4'>Popular Recipes</h3>
-			<div className='grid gap-[2px]'>
-				{[...CATEGORIES].splice(0, 3).map((value) => (
-					<PopularRecipeItem
-						onClick={() => onClick(value)}
-						key={value}
-						text={value}
-					/>
-				))}
+	if (recipes && Object.keys(recipes).length > 0) {
+		const randomNumber = Math.ceil(Math.random() * 10);
+		return (
+			<div className='sticky top-[110px] hidden md:block'>
+				<h3 className='text-[18px] mb-4'>Popular Recipes</h3>
+				<div className='grid gap-[2px]'>
+					<PopularRecipeItem recipes={recipes} />
+					<PopularRecipeItem recipes={recipes} />
+					<PopularRecipeItem recipes={recipes} />
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
+
+	return null;
 };
 
 export default PopularRecipes;

@@ -5,6 +5,7 @@ import {
 	recipesController,
 	recipeController,
 	similarRecipesController,
+	restaurantsController,
 } from './controllers';
 
 export const useRecipesServices = ({
@@ -67,6 +68,20 @@ export const useSimilarRecipeServices = ({
 	return {
 		isLoadingSimilarRecipes: isLoading,
 		similarRecipes: recipes,
+	};
+};
+
+export const useRestaurantServices = (params?: { [key: string]: any }) => {
+	const { data, isLoading } = useQuery({
+		queryKey: [QUERY_KEYS.Restaurants],
+		queryFn: () => restaurantsController(params),
+	});
+
+	const restaurants = data && data?.data && data.data.data;
+
+	return {
+		isLoadingRestaurants: isLoading,
+		restaurants,
 	};
 };
 

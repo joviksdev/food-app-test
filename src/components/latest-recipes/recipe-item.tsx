@@ -14,7 +14,7 @@ const RecipeItem = ({ recipe }: IRecipeItem) => {
 					style={{
 						backgroundImage: `url(${recipe.thumbnail_url})`,
 					}}
-					className='group h-[250px] [&>img]:w-full bg-cover bg-center relative overflow-hidden before:content-[""] before:absolute before:top-0 before:left-0 before:bg-primary/20 before:w-full before:bottom-0 transition-all duration-1000 before:opacity-0 group-hover/container:before:opacity-100 group-hover/container:scale-105'
+					className='group h-[250px] [&>img]:w-full bg-cover bg-no-repeat bg-center w-full relative overflow-hidden before:content-[""] before:absolute before:top-0 before:left-0 before:bg-primary/20 before:w-full before:bottom-0 transition-all duration-1000 before:opacity-0 group-hover/container:before:opacity-100 group-hover/container:scale-105'
 				></div>
 				<NavLink
 					to={`${LINKS.Recipes}/${recipe.id}`}

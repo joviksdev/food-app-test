@@ -31,15 +31,15 @@ const Recipe = () => {
 		return (
 			<AppContainer className='pt-6 pb-20'>
 				<h1 className='mb-2 text-2xl capitalize'>{cleanText(recipe.name)}</h1>
-				<div className='grid pt-4 gap-6 grid-cols-6'>
-					<div className='col-span-4'>
+				<div className='grid pt-4 gap-6 md:grid-cols-6'>
+					<div className='md:col-span-3 lg:col-span-4'>
 						<img
 							className='w-full'
 							src={recipe.thumbnail_url}
 							alt={recipe.name}
 						/>
 					</div>
-					<div className='col-span-2'>
+					<div className='md:col-span-3 lg:col-span-2'>
 						<RecipeDescription price={price} description={recipe.nutrition} />
 					</div>
 				</div>

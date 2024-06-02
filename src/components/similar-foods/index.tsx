@@ -17,9 +17,9 @@ const SimilarFoods = ({ recipe }: ISimilarFoods) => {
 
 	return (
 		<div>
-			<h2 className='mb-4 font-semibold'>Similar Foods</h2>
+			<h2 className='mb-4 font-semibold'>Similar Recipes</h2>
 			{isLoadingSimilarRecipes ? (
-				<p>Loading Similar Food...</p>
+				<p>Loading Similar recipes...</p>
 			) : (
 				similarRecipes &&
 				Array.isArray(similarRecipes) &&

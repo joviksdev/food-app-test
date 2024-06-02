@@ -8,6 +8,7 @@ interface ConfigTypes extends AxiosRequestConfig {
 }
 
 export const apiRequest = async (config?: ConfigTypes) => {
+	const headers = config?.headers;
 	const res = await axios({
 		url: config?.url,
 		baseURL: config?.baseURL || BASE_URL,
@@ -16,7 +17,7 @@ export const apiRequest = async (config?: ConfigTypes) => {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
 			'X-RapidAPI-Key': 'd4047c84demshd0d92035d828c3ep16d080jsn30960372e188',
-			'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
+			...headers,
 		},
 		data: config?.data,
 		params: config?.params,
